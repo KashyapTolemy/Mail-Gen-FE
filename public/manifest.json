@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Mail-Gen Extension",
+  "version": "1.0",
+  "description": "Generates email content based on resume and JD",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["storage"],
+  "icons": {
+    "48": "icon.png"
+  }
+}
