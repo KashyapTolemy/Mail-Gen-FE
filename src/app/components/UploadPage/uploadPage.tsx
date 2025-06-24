@@ -38,7 +38,7 @@ const UploadPage: React.FC<UploadPageProps> = ({ setResumeFile, fileList, setFil
 
   return (
     <div className={styles.container}>
-      <Card className={styles.card} bordered={false}>
+      <Card className={styles.card} >
         <Title level={3} className={styles.heading}>Upload Your Resume</Title>
 
         <Dragger {...props} className={styles.dragger} style={{ marginBottom: '20px', marginTop: '75px' }}>

@@ -44,7 +44,7 @@ const JDForm: React.FC<JDFormProps> = ({ resumeFile, onBack, onSuccess }) => {
 
   return (
     <div className={styles.container}>
-      <Card className={styles.card} bordered={false}>
+      <Card className={styles.card} >
         <Title level={3} className={styles.heading}>Paste Job Description</Title>
 
         <Input.TextArea

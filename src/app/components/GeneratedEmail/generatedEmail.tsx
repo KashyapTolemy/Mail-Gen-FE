@@ -11,6 +11,11 @@ interface Props {
 }
 
 const GeneratedEmail: React.FC<Props> = ({ subject, content, onRestart }) => {
+  const handleSendEmail = () => {
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(content)}`;
+    window.open(gmailLink, '_blank');
+  };
+
   return (
     <div className={styles.container}>
       <Card className={styles.card}>
@@ -26,16 +31,22 @@ const GeneratedEmail: React.FC<Props> = ({ subject, content, onRestart }) => {
           <Paragraph className={styles.contentBox}>
             {content.split('\n').map((line, idx) => (
                 <span key={idx}>
-                {line}
-                <br />
+                  {line}
+                  <br />
                 </span>
             ))}
             </Paragraph>
         </div>
+        
+        <div className={styles.buttonContainer}>
+          <Button type="default" onClick={handleSendEmail} className={styles.sendButton}>
+            Open in Email
+          </Button>
 
-        <Button type="primary" onClick={onRestart} className={styles.backButton}>
-          Start Over
-        </Button>
+          <Button type="primary" onClick={onRestart} className={styles.backButton}>
+            Start Over
+          </Button>
+        </div>
 
         <div className={styles.note}>
             <Paragraph>
