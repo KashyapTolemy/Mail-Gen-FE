@@ -29,11 +29,7 @@ const JDForm: React.FC<JDFormProps> = ({ resumeFile, onBack, onSuccess }) => {
 
     setLoading(true);
     try {
-      // const response = await callEmailAPI(formData);
-      const response = {
-        subject: 'Sample Subject',
-        content: `Dear Hiring Manager,\n\nI am excited to apply for the role...\n\n• 3+ years experience\n• Strong communication\n\nRegards,\nCandidate`
-      };
+      const response = await callEmailAPI(formData);
       onSuccess(response);
     } catch {
       toast.error('Failed to generate content');

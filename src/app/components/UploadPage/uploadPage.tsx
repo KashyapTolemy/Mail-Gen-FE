@@ -25,7 +25,7 @@ const UploadPage: React.FC<UploadPageProps> = ({ setResumeFile, fileList, setFil
       setResumeFile(file);
       toast.success(`${file.name} uploaded successfully`);
       setFileList([file]);
-      return false; // prevent automatic upload
+      return false;
     },
 
     onChange: (info: any) => {
@@ -33,7 +33,7 @@ const UploadPage: React.FC<UploadPageProps> = ({ setResumeFile, fileList, setFil
       setFileList(latestFile ? [latestFile] : []);
     },
 
-    customRequest: () => {}, // disable default upload behavior
+    customRequest: () => {},
   };
 
   return (
